@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d4ab048e-9d9b-46e3-9e22-7354d433db05" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="65c19962-446b-4f28-b3e1-b987a18b619e" />
+  <component name="ProjectId" id="1houA9d95br8Ls0Ho42lO8k2Orq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/tezgah" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\ibrahim\Desktop\universal-blog\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+    <property name="ts.external.directory.path" value="C:\Users\ibrahim\Desktop\ibrahimuzuncom\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\tezgah" />
+      <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\projeler" />
+      <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\maarif" />
+      <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\lahzalar" />
+      <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\kimdir" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ibrahim\Desktop\universal-blog\public" />
+      <recent name="C:\Users\ibrahim\Desktop\universal-blog" />
+      <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\kimdir" />
+      <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\lahzalar" />
+      <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\maarif" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d4ab048e-9d9b-46e3-9e22-7354d433db05" name="Default Changelist" comment="" />
+      <created>1600689620037</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600689620037</updated>
+      <workItem from="1600689621085" duration="8491000" />
+      <workItem from="1600871524164" duration="4242000" />
+      <workItem from="1600879962997" duration="596000" />
+      <workItem from="1600936723255" duration="49418000" />
+      <workItem from="1601033573592" duration="17385000" />
+      <workItem from="1601069207446" duration="163000" />
+      <workItem from="1601069392169" duration="5552000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="603" y="346" key="#Plugins" timestamp="1601069212448">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="603" y="346" key="#Plugins/0.0.2560.1410@0.0.2560.1410" timestamp="1601069212448" />
+    <state x="239" y="510" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600944549696">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="239" y="510" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1410@0.0.2560.1410" timestamp="1600944549696" />
+    <state x="370" y="455" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601069551049">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="370" y="455" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1410@0.0.2560.1410" timestamp="1601069551049" />
+    <state width="1180" height="580" key="GridCell.Tab.0.bottom" timestamp="1600949801800">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="1180" height="580" key="GridCell.Tab.0.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1600949801800" />
+    <state width="1180" height="580" key="GridCell.Tab.0.center" timestamp="1600949801800">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="1180" height="580" key="GridCell.Tab.0.center/0.0.2560.1410@0.0.2560.1410" timestamp="1600949801800" />
+    <state width="1180" height="580" key="GridCell.Tab.0.left" timestamp="1600949801800">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="1180" height="580" key="GridCell.Tab.0.left/0.0.2560.1410@0.0.2560.1410" timestamp="1600949801800" />
+    <state width="1180" height="580" key="GridCell.Tab.0.right" timestamp="1600949801800">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="1180" height="580" key="GridCell.Tab.0.right/0.0.2560.1410@0.0.2560.1410" timestamp="1600949801800" />
+    <state x="1500" y="443" key="IDE.errors.dialog" timestamp="1600961563439">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="1500" y="443" key="IDE.errors.dialog/0.0.2560.1410@0.0.2560.1410" timestamp="1600961563439" />
+    <state x="632" y="423" width="569" height="564" key="find.popup" timestamp="1601073018533">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="632" y="423" width="569" height="564" key="find.popup/0.0.2560.1410@0.0.2560.1410" timestamp="1601073018533" />
+    <state x="389" y="323" width="672" height="678" key="search.everywhere.popup" timestamp="1601070817724">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="389" y="323" width="672" height="678" key="search.everywhere.popup/0.0.2560.1410@0.0.2560.1410" timestamp="1601070817724" />
+  </component>
+</project>

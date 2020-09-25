@@ -1,0 +1,63 @@
+{
+  "name": "next-react-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "npm run build-storybook && next build",
+    "start": "next start",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook -o public/ui",
+    "icon": "svgr icons -d components/icons --icon --replace-attr-values \"#fff=currentColor\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "clsx": "^1.1.1",
+    "dayjs": "^1.8.29",
+    "next": "^9.5.4-canary.21",
+    "next-seo": "^4.7.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-feather": "^2.0.8",
+    "react-notion": "^0.8.1",
+    "sass": "^1.26.10",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/react": "^5.3.19",
+    "@svgr/cli": "^5.4.0",
+    "@types/classnames": "^2.2.10",
+    "@types/node": "^14.0.23",
+    "@types/node-fetch": "^2.5.7",
+    "@types/react": "^16.9.43",
+    "@types/react-helmet": "^6.1.0",
+    "autoprefixer": "^9.7.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.2.0",
+    "next-compose-plugins": "^2.2.0",
+    "postcss": "^8.0.9",
+    "postcss-custom-media": "^7.0.8",
+    "postcss-loader": "^4.0.2",
+    "postcss-nested": "^4.2.3",
+    "prettier": "^2.0.5",
+    "prop-types": "^15.7.2",
+    "react-use": "^15.3.3",
+    "state": "^0.2.0",
+    "style-loader": "^1.2.1",
+    "tailwindcss": "^1.8.10",
+    "typescript": "^3.9.7"
+  },
+  "peerDependencies": {
+    "postcss": "^8.0.9"
+  }
+}
