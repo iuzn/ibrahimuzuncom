@@ -12,7 +12,7 @@ import {Projeler} from "../../components/sections/projeler";
 
 
 interface AppProps {
-    proje: Proje[];
+    projeler: Proje[];
 }
 
 
