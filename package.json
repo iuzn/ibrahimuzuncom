@@ -41,7 +41,7 @@
     "@types/node-fetch": "^2.5.7",
     "@types/react": "^16.9.43",
     "@types/react-helmet": "^6.1.0",
-    "autoprefixer": "^9.7.0",
+    "autoprefixer": "^9.8.6",
     "babel-loader": "^8.1.0",
     "css-loader": "^4.2.0",
     "next-compose-plugins": "^2.2.0",
