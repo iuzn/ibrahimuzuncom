@@ -1,5 +1,10 @@
-*.idea
-*.storybook
+.idea/codeStyles
+.idea/inspectionProfiles
+.idea/ibrahimuzuncom.iml
+.idea/workspace.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
 
 
 # Logs
