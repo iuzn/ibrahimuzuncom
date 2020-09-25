@@ -3,7 +3,8 @@ module.exports = {
     require("tailwindcss"),
     require("postcss-nested"),
     require("autoprefixer"),
-['postcss-custom-media' ,
+
+[require("postcss-custom-media") ,
     {
       importFrom: [
         {

@@ -1,5 +1,6 @@
-.idea
-.storybook
+*.idea
+*.storybook
+
 
 # Logs
 logs
