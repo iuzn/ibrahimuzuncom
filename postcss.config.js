@@ -1,8 +1,8 @@
 module.exports = {
   plugins: [
-    'tailwindcss',
-    'autoprefixer',
-    'postcss-nested',
+    require("tailwindcss"),
+    require("postcss-nested"),
+    require("autoprefixer"),
 ['postcss-custom-media' ,
     {
       importFrom: [
