@@ -36,7 +36,7 @@ export default function MyApp({ Component, pageProps }) {
           />
         <script defer
   src="http://commento.example.com/js/commento.js"
-  data-css-override="http://example.com/my-custom-styling.css"
+  data-css-override="http://ibrahimuzuncom.vercel.app/my-custom-styling.css"
   data-auto-init="true">
 </script>
 
