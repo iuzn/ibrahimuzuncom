@@ -8,6 +8,15 @@
 
 
 }
+
+input,
+textarea,
+button,
+select,
+label,
+a{
+      -webkit-tap-highlight-color: transparent;
+}
 html{
     scroll-behavior: smooth;
 
