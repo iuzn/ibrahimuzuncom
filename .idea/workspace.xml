@@ -31,7 +31,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\ibrahim\Desktop\universal-blog\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="ts.external.directory.path" value="C:\Users\ibrahim\Desktop\ibrahimuzuncom\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -52,19 +52,6 @@
       <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\maarif" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -79,7 +66,12 @@
       <workItem from="1600936723255" duration="49418000" />
       <workItem from="1601033573592" duration="17385000" />
       <workItem from="1601069207446" duration="163000" />
-      <workItem from="1601069392169" duration="8357000" />
+      <workItem from="1601069392169" duration="8716000" />
+      <workItem from="1601113506599" duration="19000" />
+      <workItem from="1601113562984" duration="340000" />
+      <workItem from="1601113917551" duration="1002000" />
+      <workItem from="1601118126163" duration="692000" />
+      <workItem from="1601125280081" duration="224000" />
     </task>
     <servers />
   </component>
@@ -87,6 +79,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="640" y="525" key="#Notifications" timestamp="1601118148429">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="640" y="525" key="#Notifications/0.0.2560.1410@0.0.2560.1410" timestamp="1601118148429" />
     <state x="603" y="346" key="#Plugins" timestamp="1601075639559">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -119,6 +115,18 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1500" y="443" key="IDE.errors.dialog/0.0.2560.1410@0.0.2560.1410" timestamp="1601077732484" />
+    <state x="781" y="350" width="1177" height="710" key="SettingsEditor" timestamp="1601125259044">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="781" y="350" width="1177" height="710" key="SettingsEditor/0.0.2560.1410@0.0.2560.1410" timestamp="1601125259044" />
+    <state x="1059" y="549" key="cloudConfig.PluginsDialog" timestamp="1601113600515">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="1059" y="549" key="cloudConfig.PluginsDialog/0.0.2560.1410@0.0.2560.1410" timestamp="1601113600515" />
+    <state x="1152" y="549" key="cloudConfig.SelfSettingsDialog" timestamp="1601113612562">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="1152" y="549" key="cloudConfig.SelfSettingsDialog/0.0.2560.1410@0.0.2560.1410" timestamp="1601113612562" />
     <state x="632" y="423" width="569" height="564" key="find.popup" timestamp="1601073018533">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>

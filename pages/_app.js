@@ -33,8 +33,6 @@ export default function MyApp({ Component, pageProps }) {
       <Head>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&display=swap" rel="stylesheet"/>
         <link rel="shortcut icon" href={"/favicon.png"}
-
-
           />
         <script defer src="https://cdn.commento.io/js/commento.js"/>
         <title>Blog</title>
