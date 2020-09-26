@@ -74,7 +74,7 @@ export const Lahzalar: React.FC<{
             Want to see more?
           </div>
           <div className="text-gray-600">Explore more of my work</div>
-          <Link href={"/work"}>
+          <Link href={"/lahzalar"}>
             <a className="mt-3 bg-gray-800 hover:bg-gray-700 text-gray-100 py-1 px-6 rounded-md">
               Hepsini Gör
             </a>
