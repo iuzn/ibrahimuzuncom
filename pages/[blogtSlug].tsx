@@ -5,22 +5,21 @@ import { config } from "../config";
 import Layout from "../components/layout"
 import { getBlogTable, getPageBlocks, getPageViews } from "../core/blog";
 import { dateFormatter } from "../core/utils";
-import { Project } from "../types/project";
+import { BlogPost } from "../types/blog";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { Footer } from "../components/sections/footer";
 import { toNotionImageUrl } from "../core/notion";
 import Header from "../components/header/header";
-import Loading from "../components/loading";
 
 interface PostProps {
   blocks: BlockMapType;
-  post: Project;
-  morePosts: Project[];
+  post: BlogPost;
+  morePosts: BlogPost[];
   postViewCount: number;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const table = await getBlogTable<Project>(config.notionProjectTableId);
+  const table = await getBlogTable<BlogPost>(config.notionBlogTableId);
   return {
     paths: table.filter(row => row.published).map(row => `/${row.slug}`),
     fallback: false,
@@ -37,7 +36,7 @@ export const getStaticProps: GetStaticProps<
     throw Error("No slug given");
   }
 
-  const table = await getBlogTable<Project>(config.notionProjectTableId);
+  const table = await getBlogTable<BlogPost>(config.notionBlogTableId);
   const publishedProjects = table.filter(p => p.published);
 
   const post = table.find(t => t.slug === slug);
@@ -66,14 +65,12 @@ export const getStaticProps: GetStaticProps<
   };
 };
 
-const BlogPost: React.FC<PostProps> = ({
+const BlogPosts: React.FC<PostProps> = ({
   post,
   blocks,
 
 }) => {
-  if (!post) return (
-      <Loading/>
-  );
+
 
 
   return (
@@ -119,4 +116,4 @@ const BlogPost: React.FC<PostProps> = ({
     </>
   );
 };
-export default BlogPost;
+export default BlogPosts;

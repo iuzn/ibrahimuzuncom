@@ -1,34 +1,34 @@
 import { NextSeo } from "next-seo";
-import { GetStaticProps } from "next";
-import { Blog } from "../../components/sections/blog";
 import { Footer } from "../../components/sections/footer";
-import { Project } from "../../types/project";
-import { getBlogTable } from "../../core/blog";
-import { config } from "../../config";
 import Header from "../../components/header/header";
 import React from "react";
 import Layout from "../../components/layout"
+import { Lahza } from "../../types/lahza";
+import {GetStaticProps} from "next";
+import {getBlogTable} from "../../core/blog";
+import {config} from "../../config";
+import {Lahzalar} from "../../components/sections/lahzalar";
+
 
 interface AppProps {
-    projects: Project[];
+  lahza: Lahza[];
 }
 
 export const getStaticProps: GetStaticProps<AppProps> = async () => {
-    const projects = await getBlogTable<Project>(config.notionProjectTableId);
+  const lahza = await getBlogTable<Lahza>(config.notionLahzaTableId);
 
-    return {
-        props: {
-            projects: projects.filter(post => post.published),
-        },
-        revalidate: 10,
-    };
+  return {
+    props: {
+      lahza: lahza.filter(post => post.published),
+    },
+    revalidate: 10,
+  };
 };
 
-
-export default ({ projects }: AppProps) => (
+export default ({ lahza }: AppProps) => (
     <>
         <NextSeo
-            title={"Blog"}
+            title={"Projeler"}
             titleTemplate={"%s"}
             description="Merhaba! İbrahim ben.  Araştırmacı, tasarımcı ve mütemadiyen talebeyim.
 "
@@ -36,8 +36,9 @@ export default ({ projects }: AppProps) => (
 
         <Layout>
             <Header />
-            <Blog projects={projects} />
-            <Footer />
+            <Lahzalar lahza={lahza} />
+                <Footer />
+
         </Layout>
 
     </>

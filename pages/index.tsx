@@ -4,29 +4,30 @@ import Layout from '../components/layout/'
 import Header from '../components/header/header'
 import { Blog } from "../components/sections/blog";
 import { Footer } from "../components/sections/footer";
-import { Post } from "../types/blog";
 import { getBlogTable, getPageBlocks } from "../core/blog";
 import { config } from "../config";
 import { Proje } from "../types/proje";
-import { Project } from "../types/project";
+import { BlogPost } from "../types/blog";
 import React from "react";
 import {Projeler} from "../components/sections/projeler";
+import {Lahzalar} from "../components/sections/lahzalar";
+import {Lahza} from "../types/lahza";
 
 
 interface AppProps {
-    posts: Post[];
+    blogpost: BlogPost[];
     projeler: Proje[];
-    projects: Project[];
+    lahza: Lahza[];
 }
 
 export const getStaticProps: GetStaticProps<AppProps> = async () => {
     const [
-        posts,
-        projects,
+        blogpost,
+        lahza,
         projelerData,
     ] = await Promise.all([
-        getBlogTable<Post>(config.notionBlogTableId),
-        getBlogTable<Project>(config.notionProjectTableId),
+        getBlogTable<BlogPost>(config.notionBlogTableId),
+        getBlogTable<Lahza>(config.notionLahzaTableId),
         getBlogTable<Omit<Proje, "blockMap">>(
             config.notionProjeTableId
         ),
@@ -42,18 +43,16 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
 
     return {
         props: {
-            posts: posts
-                .filter(post => post.published)
-                .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date))),
             projeler,
-            projects: projects.filter(p => p.published),
+            blogpost: blogpost.filter(p => p.published),
+            lahza: lahza.filter(p => p.published),
 
         },
         revalidate: 10,
     };
 };
 
-export default ({ projeler, projects }: AppProps) => (
+export default ({ projeler, blogpost, lahza }: AppProps) => (
     <>
         {
 
@@ -66,8 +65,9 @@ export default ({ projeler, projects }: AppProps) => (
 
         <Layout>
             <Header />
-            <Blog projects={projects} preview />
+            <Blog blogpost={blogpost} preview />
             <Projeler projeler={projeler} />
+            <Lahzalar lahza={lahza} preview />
             <Footer />
         </Layout>
 

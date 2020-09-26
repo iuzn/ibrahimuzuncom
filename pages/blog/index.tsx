@@ -2,30 +2,30 @@ import { NextSeo } from "next-seo";
 import { GetStaticProps } from "next";
 import { Blog } from "../../components/sections/blog";
 import { Footer } from "../../components/sections/footer";
-import { Project } from "../../types/project";
 import { getBlogTable } from "../../core/blog";
 import { config } from "../../config";
 import Header from "../../components/header/header";
 import React from "react";
 import Layout from "../../components/layout"
+import {BlogPost} from "../../types/blog";
 
 interface AppProps {
-  projects: Project[];
+    blogpost: BlogPost[];
 }
 
 export const getStaticProps: GetStaticProps<AppProps> = async () => {
-  const projects = await getBlogTable<Project>(config.notionProjectTableId);
+  const blogpost = await getBlogTable<BlogPost>(config.notionBlogTableId);
 
   return {
     props: {
-      projects: projects.filter(post => post.published),
+      blogpost: blogpost.filter(post => post.published),
     },
     revalidate: 10,
   };
 };
 
 
-export default ({ projects }: AppProps) => (
+export default ({ blogpost }: AppProps) => (
     <>
         <NextSeo
             title={"Blog"}
@@ -36,7 +36,7 @@ export default ({ projects }: AppProps) => (
 
         <Layout>
             <Header />
-            <Blog projects={projects} />
+            <Blog blogpost={blogpost} />
             <Footer />
         </Layout>
 

@@ -31,7 +31,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\ibrahim\Desktop\universal-blog\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="ts.external.directory.path" value="C:\Users\ibrahim\Desktop\ibrahimuzuncom\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -71,7 +71,7 @@
       <workItem from="1601113562984" duration="340000" />
       <workItem from="1601113917551" duration="1002000" />
       <workItem from="1601118126163" duration="692000" />
-      <workItem from="1601125280081" duration="3650000" />
+      <workItem from="1601125280081" duration="9828000" />
     </task>
     <servers />
   </component>
@@ -115,10 +115,10 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1500" y="443" key="IDE.errors.dialog/0.0.2560.1410@0.0.2560.1410" timestamp="1601077732484" />
-    <state x="781" y="350" width="1177" height="710" key="SettingsEditor" timestamp="1601125259044">
+    <state x="781" y="350" width="1177" height="710" key="SettingsEditor" timestamp="1601136628700">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="781" y="350" width="1177" height="710" key="SettingsEditor/0.0.2560.1410@0.0.2560.1410" timestamp="1601125259044" />
+    <state x="781" y="350" width="1177" height="710" key="SettingsEditor/0.0.2560.1410@0.0.2560.1410" timestamp="1601136628700" />
     <state x="1059" y="549" key="cloudConfig.PluginsDialog" timestamp="1601113600515">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>

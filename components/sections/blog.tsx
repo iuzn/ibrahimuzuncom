@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { Project as ProjectData  } from "../../types/project";
+import { BlogPost as BlogPostData  } from "../../types/blog";
 import Link from "next/link";
 import styles from "./blog.module.css"
 import { toNotionImageUrl } from "../../core/notion";
@@ -8,8 +8,8 @@ import { toNotionImageUrl } from "../../core/notion";
 
 
 
-export const Project: React.FC<
-    ProjectData & {
+export const BlogPost: React.FC<
+    BlogPostData & {
     featured?: boolean;
     className?: string;
 }
@@ -49,7 +49,7 @@ export const Project: React.FC<
         }
         <Link href={`/[projectSlug]`} as={`/${slug}`}>
             <a
-                aria-label={`${title} - Project`}
+                aria-label={`${title} - Blog`}
 
             >
 
@@ -74,14 +74,14 @@ export const Project: React.FC<
 );
 
 export const Blog: React.FC<{
-    projects: ProjectData[];
+    blogpost: BlogPostData[];
     preview?: boolean;
-}> = ({ projects, preview }) => (
+}> = ({ blogpost, preview }) => (
     <div>
 
         <div className="grid grid-cols-1 ">
-            {projects.slice(0, preview ? 1 : undefined).map(p => (
-                <Project key={p.id} featured {...p} />
+            {blogpost.slice(0, preview ? 1 : undefined).map(p => (
+                <BlogPost key={p.id} featured {...p} />
             ))}
         </div>
         <div className="container pb-8">
@@ -91,8 +91,8 @@ export const Blog: React.FC<{
             </div></div>
         {preview && (
             <div className="md:grid mt-4 grid-cols-2 sm:grid-cols-4 gap-4 ">
-                {projects.slice(1, 5).map(p => (
-                    <Project key={p.id} className="hidden md:flex" {...p} />
+                {blogpost.slice(1, 5).map(p => (
+                    <BlogPost key={p.id} className="hidden md:flex" {...p} />
                 ))}
 
             </div>
