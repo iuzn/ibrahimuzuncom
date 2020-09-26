@@ -35,6 +35,7 @@ export default function MyApp({ Component, pageProps }) {
         <link rel="shortcut icon" href={"/favicon.png"}
           />
         <script defer src="https://cdn.commento.io/js/commento.js"/>
+
         <title>Blog</title>
       </Head>
       <Component {...pageProps} />
