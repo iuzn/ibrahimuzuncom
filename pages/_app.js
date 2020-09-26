@@ -34,11 +34,6 @@ export default function MyApp({ Component, pageProps }) {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&display=swap" rel="stylesheet"/>
         <link rel="shortcut icon" href={"/favicon.png"}
           />
-        <script defer
-  src="http://commento.example.com/js/commento.js"
-  data-css-override="http://ibrahimuzuncom.vercel.app/my-custom-styling.css"
-  data-auto-init="true">
-</script>
 
         <title>Blog</title>
       </Head>

@@ -114,7 +114,6 @@ const BlogPost: React.FC<PostProps> = ({
       <article className="flex-1 my-6 post-container">
         <NotionRenderer blockMap={blocks} mapImageUrl={toNotionImageUrl} />
       </article>
-        <div id="commento"/>
       <Footer />
       </Layout>
     </>
