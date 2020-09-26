@@ -15,7 +15,7 @@ export const Lahza: React.FC<
     className?: string;
   }
 > = ({ title, preview, images, featured, slug, className }) => (
-  <Link href={`/[projectSlug]`} as={`/${slug}`}>
+  <Link href={`/lahzalar/[lahzalarSlug]`} as={`/lahzalar/${slug}`}>
     <a
       aria-label={`${title} - Project`}
       className={clsx(
