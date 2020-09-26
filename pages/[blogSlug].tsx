@@ -3,7 +3,7 @@ import { NextSeo } from "next-seo";
 import { NotionRenderer, BlockMapType } from "react-notion";
 import { config } from "../config";
 import Layout from "../components/layout"
-import { getBlogTable, getPageBlocks, getPageViews } from "../core/blog";
+import { getBlogTable, getPageBlocks } from "../core/blog";
 import { dateFormatter } from "../core/utils";
 import { BlogPost } from "../types/blog";
 import { GetStaticProps, GetStaticPaths } from "next";
@@ -15,7 +15,6 @@ interface PostProps {
   blocks: BlockMapType;
   post: BlogPost;
   morePosts: BlogPost[];
-  postViewCount: number;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -28,9 +27,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<
   PostProps,
-  { postSlug: string }
+  { blogSlug: string }
 > = async ({ params }) => {
-  const slug = params?.postSlug;
+  const slug = params?.blogSlug;
 
   if (!slug) {
     throw Error("No slug given");
@@ -52,12 +51,10 @@ export const getStaticProps: GetStaticProps<
   }
 
   const blocks = await getPageBlocks(post.id);
-  const postViewCount = await getPageViews(`/${slug}`);
 
   return {
     props: {
       post,
-      postViewCount,
       blocks,
       morePosts,
     },

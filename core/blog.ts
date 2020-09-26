@@ -12,15 +12,8 @@ export const getPageBlocks = async (pageId: string): Promise<BlockMapType> => {
   ).then(res => res.json());
 };
 
-export const getPageViews = async (path: string): Promise<number> => {
-  const res = await fetch(
-    `https://api.splitbee.io/public/timo.sh?path=${path}`
-  ).then(res => res.json());
-  return res.count || 0;
-};
-
 export const getDateStr = (date: Date | string) => {
-  return new Date(date).toLocaleString("en-US", {
+  return new Date(date).toLocaleString("tr-TR", {
     month: "long",
     day: "2-digit",
     year: "numeric",
