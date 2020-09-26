@@ -28,21 +28,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<
   PostProps,
-  { projectSlug: string }
+  { postSlug: string }
 > = async ({ params }) => {
-  const slug = params?.projectSlug;
+  const slug = params?.postSlug;
 
   if (!slug) {
     throw Error("No slug given");
   }
 
   const table = await getBlogTable<BlogPost>(config.notionBlogTableId);
-  const publishedProjects = table.filter(p => p.published);
+  const publishedPosts = table.filter(p => p.published);
 
   const post = table.find(t => t.slug === slug);
-  const postIndex = publishedProjects.findIndex(t => t.slug === slug);
+  const postIndex = publishedPosts.findIndex(t => t.slug === slug);
 
-  const morePosts = [...publishedProjects, ...publishedProjects].slice(
+  const morePosts = [...publishedPosts, ...publishedPosts].slice(
     postIndex + 1,
     postIndex + 3
   );
