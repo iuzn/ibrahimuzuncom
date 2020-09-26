@@ -1827,7 +1827,7 @@
         MENU = [
           {
             key: 'blog',
-            path: '/blog',
+            path: '/video-blog',
             icon: react_default.a.createElement(icons.b, null),
             iconSelected: react_default.a.createElement(icons.c, null),
             title: 'Blog'

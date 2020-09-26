@@ -4,17 +4,18 @@ import Layout from '../components/layout/'
 import Header from '../components/header/header'
 import { Blog } from "../components/sections/blog";
 import { Footer } from "../components/sections/footer";
-import { Achievements } from "../components/sections/achievements";
 import { Post } from "../types/blog";
 import { getBlogTable, getPageBlocks } from "../core/blog";
 import { config } from "../config";
-import { Achievement } from "../types/achievement";
+import { Proje } from "../types/proje";
 import { Project } from "../types/project";
 import React from "react";
+import {Projeler} from "../components/sections/projeler";
+
 
 interface AppProps {
     posts: Post[];
-    achievements: Achievement[];
+    projeler: Proje[];
     projects: Project[];
 }
 
@@ -22,18 +23,18 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
     const [
         posts,
         projects,
-        achievementsData,
+        projelerData,
     ] = await Promise.all([
         getBlogTable<Post>(config.notionBlogTableId),
         getBlogTable<Project>(config.notionProjectTableId),
-        getBlogTable<Omit<Achievement, "blockMap">>(
-            config.notionAchievementTableId
+        getBlogTable<Omit<Proje, "blockMap">>(
+            config.notionProjeTableId
         ),
 
     ]);
 
-    const achievements: Achievement[] = await Promise.all(
-        achievementsData.map(async a => ({
+    const projeler: Proje[] = await Promise.all(
+        projelerData.map(async a => ({
             ...a,
             blockMap: await getPageBlocks(a.id),
         }))
@@ -44,7 +45,7 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
             posts: posts
                 .filter(post => post.published)
                 .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date))),
-            achievements,
+            projeler,
             projects: projects.filter(p => p.published),
 
         },
@@ -52,7 +53,7 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
     };
 };
 
-export default ({ achievements, projects }: AppProps) => (
+export default ({ projeler, projects }: AppProps) => (
     <>
         {
 
@@ -66,7 +67,7 @@ export default ({ achievements, projects }: AppProps) => (
         <Layout>
             <Header />
             <Blog projects={projects} preview />
-            <Achievements achievements={achievements} />
+            <Projeler projeler={projeler} />
             <Footer />
         </Layout>
 

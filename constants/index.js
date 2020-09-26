@@ -21,32 +21,18 @@ export const MENU = [
     title: 'Blog'
   },
   {
-    key: 'tezgah',
-    path: '/tezgah',
-    icon: <Icon.Tezgah />,
-    iconSelected: <Icon.TezgahFilled />,
-    title: 'Tezgah'
-  },
-  {
-    key: 'projeler',
-    path: '/projeler',
-    icon: <Icon.Projeler />,
-    iconSelected: <Icon.ProjelerFilled />,
-    title: 'Projeler'
-  },
-  {
-    key: 'maarif',
-    path: '/maarif',
-    icon: <Icon.Maarif />,
-    iconSelected: <Icon.MaarifFilled />,
-    title: 'Maarif'
-  },
-  {
     key: 'lahzalar',
     path: '/lahzalar',
     icon: <Icon.Lahzalar />,
     iconSelected: <Icon.LahzalarFilled />,
     title: 'Lahzalar'
+  },
+  {
+    key: 'projeler',
+    path: '/projeler',
+    icon: <Icon.Tezgah />,
+    iconSelected: <Icon.TezgahFilled />,
+    title: 'Projeler'
   },
   {
     key: 'kimdir',

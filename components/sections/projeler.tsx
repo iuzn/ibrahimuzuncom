@@ -50,7 +50,7 @@ const ProjeRow: React.FC<ProjeProps> = ({
                 <NotionRenderer  blockMap={blockMap} />
             </div>
         </h4>
-        <div className={cn( "text-color-primary")} >
+        <div className={cn( "text-color-primary select-none")} >
             <Timestamp
                 className="border-l pl-2 ml-2"
                 date={new Date(date)}
