@@ -100,7 +100,7 @@ const BlogPosts: React.FC<PostProps> = ({
           <div className="my-8 w-full max-w-3xl mx-auto px-4">
               {lahza.images && lahza.images[0] && (
             <img
-
+                className={"mx-auto"}
               src={toNotionImageUrl(lahza.images[0].url)}
               alt={lahza.title}
             />
