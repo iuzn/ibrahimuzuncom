@@ -10,6 +10,8 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import { Footer } from "../../components/sections/footer";
 import { toNotionImageUrl } from "../../core/notion";
 import Header from "../../components/header/header";
+import { useRouter } from 'next/router'
+
 
 interface PostProps {
   blocks: BlockMapType;
@@ -21,7 +23,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const table = await getBlogTable<Lahza>(config.notionLahzaTableId);
   return {
     paths: table.filter(row => row.published).map(row => `/lahzalar/${row.slug}`),
-    fallback: false,
+    fallback: true,
   };
 };
 
@@ -67,9 +69,10 @@ const BlogPosts: React.FC<PostProps> = ({
   blocks,
 
 }) => {
-
-
-
+    const router = useRouter()
+    if (router.isFallback) {
+        return <div>Loading...</div>
+    }
   return (
     <>
       <NextSeo

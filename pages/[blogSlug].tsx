@@ -68,7 +68,7 @@ const BlogPosts: React.FC<PostProps> = ({
   blocks,
 
 }) => {
-      const router = useRouter()
+    const router = useRouter()
     if (router.isFallback) {
     return <div>Loading...</div>
   }
