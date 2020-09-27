@@ -10,6 +10,7 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import { Footer } from "../components/sections/footer";
 import { toNotionImageUrl } from "../core/notion";
 import Header from "../components/header/header";
+import { useRouter } from 'next/router'
 
 interface PostProps {
   blocks: BlockMapType;
@@ -21,7 +22,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const table = await getBlogTable<BlogPost>(config.notionBlogTableId);
   return {
     paths: table.filter(row => row.published).map(row => `/${row.slug}`),
-    fallback: false,
+    fallback: true,
   };
 };
 
@@ -58,7 +59,7 @@ export const getStaticProps: GetStaticProps<
       blocks,
       morePosts,
     },
-    revalidate: 10,
+    revalidate: 1,
   };
 };
 
@@ -67,6 +68,10 @@ const BlogPosts: React.FC<PostProps> = ({
   blocks,
 
 }) => {
+      const router = useRouter()
+    if (router.isFallback) {
+    return <div>Loading...</div>
+  }
   return (
     <>
       <NextSeo

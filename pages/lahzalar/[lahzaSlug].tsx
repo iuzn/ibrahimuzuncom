@@ -58,7 +58,7 @@ export const getStaticProps: GetStaticProps<
       blocks,
       moreLahza,
     },
-    revalidate: 10,
+    revalidate: 1,
   };
 };
 
