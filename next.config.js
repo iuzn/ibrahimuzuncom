@@ -2,7 +2,7 @@ const path = require('path')
 
 const withPlugins = require("next-compose-plugins");
 
-const withSvgr = (nextConfig = {}, ) => {
+const withSvgr = (nextConfig = {}, nextComposePlugins = {}) => {
   return Object.assign({}, nextConfig, {
     webpack(config, options) {
       config.module.rules.push({
@@ -20,14 +20,6 @@ const withSvgr = (nextConfig = {}, ) => {
 };
 
 module.exports = withPlugins([withSvgr], {
-  async rewrites() {
-    return [
-      {
-        source: '/:slug',
-        destination: '/:slug',
-      },
-    ]
-  },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]
   }
