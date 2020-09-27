@@ -24,7 +24,7 @@ module.exports = withPlugins([withSvgr], {
     return [
       {
         source: '/:slug',
-        destination: '/blog',
+        destination: '/:slug',
       },
     ]
   },
