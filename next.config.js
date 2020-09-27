@@ -31,7 +31,7 @@ module.exports = withPlugins([withSvgr], {
     const originalEntry = cfg.entry
     cfg.entry = async () => {
       const entries = { ...(await originalEntry()) }
-      entries['./code/blog.ts'] = './code/blog.ts'
+      entries['./core/blog.ts'] = './core/blog.ts'
       return entries
     }
     return cfg
