@@ -4,5 +4,12 @@
       "src": "/(?<blogSlug>)",
       "dest": "/:slug?blogSlug=$blogSlug"
     }
-  ]
+  ],
+    "functions": {
+    "pages/[blogSlug].tsx": {
+      "memory": 3008,
+      "maxDuration": 60
+    }
+  },
+    "version": 2
 }

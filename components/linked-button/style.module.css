@@ -1,7 +1,7 @@
 .navButton {
   padding: 12px;
   color: var(--c-yellow);
-  border: 1px solid var(--c-yellow);
+  border: 2px solid var(--c-yellow);
   width: max-content;
   svg {
     font-size: 26px;

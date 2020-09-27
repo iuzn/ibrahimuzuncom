@@ -67,9 +67,6 @@ const BlogPosts: React.FC<PostProps> = ({
   blocks,
 
 }) => {
-
-
-
   return (
     <>
       <NextSeo
