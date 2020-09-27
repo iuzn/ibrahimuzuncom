@@ -21,7 +21,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const table = await getBlogTable<BlogPost>(config.notionBlogTableId);
   return {
     paths: table.filter(row => row.published).map(row => `/${row.slug}`),
-    fallback: false,
+    fallback: true,
   };
 };
 
