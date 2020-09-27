@@ -20,6 +20,22 @@ const withSvgr = (nextConfig = {}, nextComposePlugins = {}) => {
 };
 
 module.exports = withPlugins([withSvgr], {
+    target: 'experimental-serverless-trace',
+  webpack(cfg, { dev, isServer }) {
+    // only compile build-rss in production server build
+    if (dev || !isServer) return cfg
+
+    // we're in build mode so enable shared caching for Notion data
+    process.env.USE_CACHE = 'true'
+
+    const originalEntry = cfg.entry
+    cfg.entry = async () => {
+      const entries = { ...(await originalEntry()) }
+      entries['./code/blog.ts'] = './code/blog.ts'
+      return entries
+    }
+    return cfg
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]
   }
