@@ -22,34 +22,37 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/tezgah" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.stylelint" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\ibrahim\Desktop\universal-blog\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="configurable.stylesheets.stylelint" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="ts.external.directory.path" value="C:\Users\ibrahim\Desktop\ibrahimuzuncom\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ibrahim\Desktop\ibrahimuzuncom\components\linked-button" />
+      <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\tezgah" />
+      <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\projeler" />
+      <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\maarif" />
+      <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\lahzalar" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ibrahim\Desktop\ibrahimuzuncom\pages\lahzalar" />
       <recent name="C:\Users\ibrahim\Desktop\universal-blog\public" />
       <recent name="C:\Users\ibrahim\Desktop\universal-blog" />
       <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\kimdir" />
       <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\lahzalar" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\tezgah" />
-      <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\projeler" />
-      <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\maarif" />
-      <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\lahzalar" />
-      <recent name="C:\Users\ibrahim\Desktop\universal-blog\pages\kimdir" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -72,7 +75,7 @@
       <workItem from="1601113917551" duration="1002000" />
       <workItem from="1601118126163" duration="692000" />
       <workItem from="1601125280081" duration="19793000" />
-      <workItem from="1601193465810" duration="1443000" />
+      <workItem from="1601193465810" duration="8162000" />
     </task>
     <servers />
   </component>
@@ -80,6 +83,14 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="633" y="542" width="844" height="332" key="#File_Watchers" timestamp="1601204215887">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="633" y="542" width="844" height="332" key="#File_Watchers/0.0.2560.1410@0.0.2560.1410" timestamp="1601204215887" />
+    <state x="906" y="383" key="#Inspections" timestamp="1601205718408">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="906" y="383" key="#Inspections/0.0.2560.1410@0.0.2560.1410" timestamp="1601205718408" />
     <state x="640" y="525" key="#Notifications" timestamp="1601118148429">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -96,6 +107,14 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="370" y="455" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1410@0.0.2560.1410" timestamp="1601129007159" />
+    <state x="413" y="486" key="EditFileWatcherDialog" timestamp="1601204215192">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="413" y="486" key="EditFileWatcherDialog/0.0.2560.1410@0.0.2560.1410" timestamp="1601204215192" />
+    <state x="881" y="507" key="FileChooserDialogImpl" timestamp="1601204380423">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="881" y="507" key="FileChooserDialogImpl/0.0.2560.1410@0.0.2560.1410" timestamp="1601204380423" />
     <state width="1180" height="580" key="GridCell.Tab.0.bottom" timestamp="1600949801800">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -116,10 +135,10 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1500" y="443" key="IDE.errors.dialog/0.0.2560.1410@0.0.2560.1410" timestamp="1601077732484" />
-    <state x="781" y="350" width="1177" height="710" key="SettingsEditor" timestamp="1601136628700">
+    <state x="156" y="284" width="1177" height="1027" key="SettingsEditor" timestamp="1601204405696">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="781" y="350" width="1177" height="710" key="SettingsEditor/0.0.2560.1410@0.0.2560.1410" timestamp="1601136628700" />
+    <state x="156" y="284" width="1177" height="1027" key="SettingsEditor/0.0.2560.1410@0.0.2560.1410" timestamp="1601204405696" />
     <state x="1059" y="549" key="cloudConfig.PluginsDialog" timestamp="1601113600515">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>

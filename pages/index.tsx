@@ -54,9 +54,6 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
 
 export default ({ projeler, blogpost, lahza }: AppProps) => (
     <>
-        {
-
-        }
         <NextSeo
             title={"İbrahim Uzun - İlelebet Muhabbet"}
             titleTemplate={"%s"}

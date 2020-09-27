@@ -2,7 +2,7 @@ const path = require('path')
 
 const withPlugins = require("next-compose-plugins");
 
-const withSvgr = (nextConfig = {}, nextComposePlugins = {}) => {
+const withSvgr = (nextConfig = {}, ) => {
   return Object.assign({}, nextConfig, {
     webpack(config, options) {
       config.module.rules.push({
@@ -20,8 +20,13 @@ const withSvgr = (nextConfig = {}, nextComposePlugins = {}) => {
 };
 
 module.exports = withPlugins([withSvgr], {
-  env: {
-    GITHUB_TOKEN: process.env.GITHUB_TOKEN,
+  async rewrites() {
+    return [
+      {
+        source: '/:slug',
+        destination: '/blog',
+      },
+    ]
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]
