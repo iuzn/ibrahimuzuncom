@@ -20,6 +20,14 @@ const withSvgr = (nextConfig = {}, nextComposePlugins = {}) => {
 };
 
 module.exports = withPlugins([withSvgr], {
+   async rewrites() {
+    return [
+      {
+        source: '/blog/:slug',
+        destination: 'https://notion-api.elementlab.net/v1/page/:slug', // Matched parameters can be used in the destination
+      },
+    ]
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]
   }
