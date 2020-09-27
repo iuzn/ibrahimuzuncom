@@ -1,5 +1,8 @@
 {
-  "rewrites": [
-    { "source": "/:slug", "destination": "/:slug" }
+  "routes": [
+    {
+      "src": "/(?<slug>)",
+      "dest": "/slug?slug=$slug"
+    }
   ]
 }
