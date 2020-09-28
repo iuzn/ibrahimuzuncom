@@ -47,7 +47,7 @@ export const BlogPost: React.FC<
                 />
             )
         }
-        <Link href={`/[projectSlug]`} as={`/${slug}`}>
+        <Link href={`/blog/[projectSlug]`} as={`/blog/${slug}`}>
             <a
                 aria-label={`${title} - Blog`}
 
@@ -84,18 +84,19 @@ export const Blog: React.FC<{
                 <BlogPost key={p.id} featured {...p} />
             ))}
         </div>
-        <div className="container pb-8">
+
+        {preview && (
+            <div className="container pb-8">
             <div className="m-auto max-w-3xl">
                 <h1 className="text-4xl font-bold">Blog</h1>
                 <div className="text-2xl ">Okumaya değer yazılar</div>
-            </div></div>
-        {preview && (
+            </div>
             <div className="md:grid mt-4 grid-cols-2 sm:grid-cols-4 gap-4 ">
                 {blogpost.slice(1, 5).map(p => (
                     <BlogPost key={p.id} className="hidden md:flex" {...p} />
                 ))}
 
-            </div>
+            </div></div>
         )}
     </div>
 );

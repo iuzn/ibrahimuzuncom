@@ -1,15 +1,15 @@
 import * as React from "react";
 import { NextSeo } from "next-seo";
 import { NotionRenderer, BlockMapType } from "react-notion";
-import { config } from "../config";
-import Layout from "../components/layout"
-import { getBlogTable, getPageBlocks } from "../core/blog";
-import { dateFormatter } from "../core/utils";
-import { BlogPost } from "../types/blog";
+import { config } from "../../config";
+import Layout from "../../components/layout/index"
+import { getBlogTable, getPageBlocks } from "../../core/blog";
+import { dateFormatter } from "../../core/utils";
+import { BlogPost } from "../../types/blog";
 import { GetStaticProps, GetStaticPaths } from "next";
-import { Footer } from "../components/sections/footer";
-import { toNotionImageUrl } from "../core/notion";
-import Header from "../components/header/header";
+import { Footer } from "../../components/sections/footer";
+import { toNotionImageUrl } from "../../core/notion";
+import Header from "../../components/header/header";
 import { useRouter } from 'next/router'
 
 interface PostProps {
@@ -21,7 +21,7 @@ interface PostProps {
 export const getStaticPaths: GetStaticPaths = async () => {
   const table = await getBlogTable<BlogPost>(config.notionBlogTableId);
   return {
-    paths: table.filter(row => row.published).map(row => `/${row.slug}`),
+    paths: table.filter(row => row.published).map(row => `/blog/${row.slug}`),
     fallback: true,
   };
 };

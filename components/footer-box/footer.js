@@ -13,7 +13,9 @@ import React from 'react'
 import a from 'next/link'
 function Footer() {
   return (
-    <div className={styles.social}>
+      <div className={"divide-y divide-current"}>
+        <div className={"text-center "}><h3>Sosyal Ağlar</h3></div>
+        <div className={"text-center"}><div className={styles.social}>
       <a href="https://www.youtube.com/ibuzn" target="_blank">
         <Youtube />
       </a>
@@ -39,13 +41,10 @@ function Footer() {
       <a href="https://www.github.com/iuzn" target="_blank">
         <Github />
       </a>
-      <br />
-      {/*<a href="https://ibrahimuzun.com">Yardım*/}
-      {/*<a href="https://ibrahimuzun.com">Yardım*/}
-      {/*<a href="https://ibrahimuzun.com">Yardım*/}
-      <br />
-      <p>ibrahim uzun © 2020</p>
-    </div>
+
+    </div></div></div>
+
+
   )
 }
 export default Footer

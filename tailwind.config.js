@@ -6,7 +6,8 @@ module.exports = {
     "./pages/**/*.tsx",
     "./components/*.tsx",
     "./components/**/*.tsx",
-    "./pages/*.js"
+    "./pages/*.js",
+    "./components/footer-box/*.js"
   ],
   theme: {
     extend: {
