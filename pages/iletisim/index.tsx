@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
 };
 
 
-export default ({ projeler }: AppProps) => (
+const Iletisim = ({ projeler }: AppProps) => (
     <>
         <NextSeo
             title={"Projeler"}
@@ -59,3 +59,4 @@ export default ({ projeler }: AppProps) => (
 
     </>
 );
+export default Iletisim

@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { IMG } from '../../constants'
 import styles from './style.module.css'
 
@@ -11,11 +10,10 @@ function ModSelect({ flat = false }) {
         return (
           <div key={img.src} className={styles.photo}>
             <div>
-              {flat ? (
-                <img className={styles.imageflat} src={img.src} alt={img.alt} />
-              ) : (
-                <img className={styles.image} src={img.src} alt={img.alt} />
-                )}
+
+              <img className={!flat ? styles.image : styles.imageflat} src={img.src} alt={img.alt} />
+
+
             </div>
 
             <div>

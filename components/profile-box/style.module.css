@@ -13,7 +13,7 @@
     margin-right: auto;
     width: 100%;
     max-width: 120px;
-    border-radius: 99px;
+    border-radius: 999px;
 }
 .imageflat{
     flex-shrink: 0;

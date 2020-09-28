@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
   };
 };
 
-export default ({ lahza }: AppProps) => (
+const LahzalarSayfasi = ({ lahza }: AppProps) => (
     <>
         <NextSeo
             title={"Projeler"}
@@ -43,3 +43,5 @@ export default ({ lahza }: AppProps) => (
 
     </>
 );
+
+export default LahzalarSayfasi

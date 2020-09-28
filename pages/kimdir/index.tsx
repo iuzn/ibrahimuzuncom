@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
 };
 
 
-export default ({ projeler }: AppProps) => (
+const Kimdir = ({ projeler }: AppProps) => (
     <>
         <NextSeo
             title={"Projeler"}
@@ -59,3 +59,5 @@ export default ({ projeler }: AppProps) => (
 
     </>
 );
+
+export default Kimdir
