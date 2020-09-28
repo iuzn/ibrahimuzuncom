@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "npm run build-storybook && next build",
+    "build": "next build",
     "start": "next start",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o public/ui",
     "icon": "svgr icons -d components/icons --icon --replace-attr-values \"#fff=currentColor\""
   },
   "keywords": [],
