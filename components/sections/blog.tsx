@@ -5,9 +5,6 @@ import Link from "next/link";
 import styles from "./blog.module.css"
 import { toNotionImageUrl } from "../../core/notion";
 
-
-
-
 export const BlogPost: React.FC<
     BlogPostData & {
     featured?: boolean;
@@ -17,16 +14,13 @@ export const BlogPost: React.FC<
     <div className={styles.post}>
 
         {featured && (
-            <div className="pb-2/3 bg-gray-100 relative border-b overflow-hidden">
-
+            <figure className="pb-2/3 aspect-16x9 bg-gray-100 relative border-b overflow-hidden">
                 <iframe
+                    title={title}
                     className={clsx("absolute w-full h-full object-cover")}
-                    src={video} frameBorder="0" />
-
-
-            </div>
+                    src={"https://youtube.com/embed/" + video.substr(video.length - 11)} frameBorder="0" />
+            </figure>
         )}
-
         <div className="flex flex-1 flex-col justify-between ">
             <div className="p-4 pb-10 ">
                 <div className="font-semibold text-xl pb-2">
@@ -37,7 +31,6 @@ export const BlogPost: React.FC<
                 </div>
             </div>
         </div>
-
         {
             !featured && (
                 <img
@@ -48,29 +41,20 @@ export const BlogPost: React.FC<
             )
         }
         <Link href={`/blog/[projectSlug]`} as={`/blog/${slug}`}>
-            <a
-                aria-label={`${title} - Blog`}
+            <a aria-label={`${title} - Blog`}>
 
-            >
-
-
-                {
-                    featured && (
-                        <footer className={styles.footer}>Okumaya devam et</footer>
-                    )
+                { featured && (
+                    <footer className={styles.footer}>Okumaya devam et</footer>
+                )
                 }
                 {
                     !featured && (
                         <footer className={styles.footer}>Oku</footer>
                     )
                 }
-
-
             </a>
         </Link>
-
     </div>
-
 );
 
 export const Blog: React.FC<{
