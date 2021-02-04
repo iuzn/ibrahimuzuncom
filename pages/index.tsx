@@ -1,72 +1,56 @@
-import { NextSeo } from "next-seo";
-import { GetStaticProps } from "next";
+import { NextSeo } from 'next-seo'
+import { GetStaticProps } from 'next'
+import React from 'react'
 import Layout from '../components/layout/'
 import Header from '../components/header/header'
-import { Blog } from "../components/sections/blog";
-import { Footer } from "../components/sections/footer";
-import { getBlogTable, getPageBlocks } from "../core/blog";
-import { config } from "../config";
-import { Proje } from "../types/proje";
-import { BlogPost } from "../types/blog";
-import React from "react";
-import {Projeler} from "../components/sections/projeler";
-import {Lahzalar} from "../components/sections/lahzalar";
-import {Lahza} from "../types/lahza";
-
+import { Blog } from '../components/sections/blog'
+import { Footer } from '../components/sections/footer'
+import { getBlogTable } from '../core/blog'
+import { config } from '../config'
+import { BlogPost } from '../types/blog'
+import { Projects } from '../components/sections/projects'
+import { Project } from '../types/project'
+import {Bookmarks} from "../components/sections/bookmarks";
+import {Bookmark} from "../types/bookmark";
 
 interface AppProps {
-    blogpost: BlogPost[];
-    projeler: Proje[];
-    lahza: Lahza[];
+  blogpost: BlogPost[]
+  project: Project[]
+  bookmark: Bookmark[]
 }
 
 export const getStaticProps: GetStaticProps<AppProps> = async () => {
-    const [
-        blogpost,
-        lahza,
-        projelerData,
-    ] = await Promise.all([
-        getBlogTable<BlogPost>(config.notionBlogTableId),
-        getBlogTable<Lahza>(config.notionLahzaTableId),
-        getBlogTable<Omit<Proje, "blockMap">>(
-            config.notionProjeTableId
-        ),
+  const [blogpost, project, bookmark] = await Promise.all([
+    getBlogTable<BlogPost>(config.notionBlogTableId),
+    getBlogTable<Project>(config.notionProjectTableId),
+    getBlogTable<Bookmark>(config.notionBookmarkTableId)
+  ])
 
-    ]);
+  return {
+    props: {
+      blogpost: blogpost.filter((p) => p.published),
+      project: project.filter((p) => p.published),
+      bookmark: bookmark.filter((p) => p.published),
+    },
+    revalidate: 10
+  }
+}
 
-    const projeler: Proje[] = await Promise.all(
-        projelerData.map(async a => ({
-            ...a,
-            blockMap: await getPageBlocks(a.id),
-        }))
-    );
+const HomePage = ({ blogpost, project, bookmark }: AppProps) => (
+  <>
+    <NextSeo
+      title={process.env.NEXT_PUBLIC_BLOG_TITLE}
+      titleTemplate={'%s'}
+      description={process.env.NEXT_PUBLIC_BLOG_DESCRIPTION}
+    />
 
-    return {
-        props: {
-            projeler,
-            blogpost: blogpost.filter(p => p.published),
-            lahza: lahza.filter(p => p.published),
-
-        },
-        revalidate: 10,
-    };
-};
-
-export default ({ projeler, blogpost, lahza }: AppProps) => (
-    <>
-        <NextSeo
-            title={"İbrahim Uzun - İlelebet Muhabbet"}
-            titleTemplate={"%s"}
-            description="Merhaba! İbrahim ben.  Araştırmacı, tasarımcı ve mütemadiyen talebeyim."
-        />
-
-        <Layout>
-            <Header />
-            <Blog blogpost={blogpost} preview />
-            <Projeler projeler={projeler} />
-            <Lahzalar lahza={lahza} preview />
-            <Footer />
-        </Layout>
-
-    </>
-);
+    <Layout>
+      <Header />
+      <Blog blogpost={blogpost} preview />
+      <Projects project={project} preview />
+      <Bookmarks bookmark={bookmark} preview />
+      <Footer />
+    </Layout>
+  </>
+)
+export default HomePage

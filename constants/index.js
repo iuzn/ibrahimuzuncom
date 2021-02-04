@@ -7,11 +7,11 @@ export default {
 }
 export const MENU = [
   {
-    key: 'anasayfa',
+    key: 'home',
     path: '/',
     icon: <Icon.Home />,
     iconSelected: <Icon.HomeFilled />,
-    title: 'Anasayfa'
+    title: 'Home'
   },
   {
     key: 'blog',
@@ -21,40 +21,39 @@ export const MENU = [
     title: 'Blog'
   },
   {
-    key: 'lahzalar',
-    path: '/lahzalar',
-    icon: <Icon.Lahzalar />,
-    iconSelected: <Icon.LahzalarFilled />,
-    title: 'Lahzalar'
+    key: 'projects',
+    path: '/projects',
+    icon: <Icon.Projeler />,
+    iconSelected: <Icon.ProjelerFilled />,
+    title: 'Projects'
   },
   {
-    key: 'projeler',
-    path: '/projeler',
-    icon: <Icon.Tezgah />,
-    iconSelected: <Icon.TezgahFilled />,
-    title: 'Projeler'
-  },
-  {
-    key: 'kimdir',
-    path: '/kimdir',
+    key: 'about',
+    path: '/about',
     icon: <Icon.Kimdir />,
     iconSelected: <Icon.KimdirFilled />,
-    title: 'Kimdir'
+    title: 'About'
   },
   {
-    key: 'iletisim',
-    path: '/iletisim',
+    key: 'contact',
+    path: '/contact',
     icon: <Icon.Iletisim />,
     iconSelected: <Icon.IletisimFilled />,
-    title: 'İletişim'
+    title: 'Contact'
+  },
+  {
+    key: 'bookmark',
+    path: '/bookmarks',
+    icon: <Icon.Tezgah />,
+    iconSelected: <Icon.TezgahFilled />,
+    title: 'Bookmarks'
   }
 ]
 
 export const IMG = [
   {
-    src:
-      'https://pbs.twimg.com/profile_images/1303696412689956864/wAm15v8c_400x400.jpg',
-    name: 'ibrahim uzun',
-    alt: ''
+    src: process.env.NEXT_PUBLIC_AVATAR_URL,
+    name: process.env.NEXT_PUBLIC_NAME,
+    alt: process.env.NEXT_PUBLIC_NAME
   }
 ]

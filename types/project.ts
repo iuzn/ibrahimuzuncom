@@ -1,10 +1,10 @@
-export type LahzaType = "metin" | "fotoğraf" | "podcast";
+export type ProjectType = "project";
 
-export interface Lahza {
+export interface Project {
   id: string;
   preview: string;
   title: string;
-  types: Lahza[];
+  types: Project[];
   images: {
     name: string;
     url: string;

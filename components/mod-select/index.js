@@ -22,13 +22,13 @@ function ModSelect({ onClick = () => {} }) {
         <Button className={styles.kapat} onClick={onClick}>
           <Kapat />
         </Button>
-        <h2>Bir Tema Seç</h2>
+        <h2>Choose Theme</h2>
 
         <div>
-          {store.theme === 'light' && <h3>"Aydınlık"</h3>}
-          {store.theme === 'dark' && <h3>"Karanlık"</h3>}
-          {store.theme === 'dim' && <h3>"Loş"</h3>}
-          {store.theme === 'sepia' && <h3>"Sepya"</h3>}
+          {store.theme === 'light' && <h3>"Light"</h3>}
+          {store.theme === 'dark' && <h3>"Dark"</h3>}
+          {store.theme === 'dim' && <h3>"Dim"</h3>}
+          {store.theme === 'sepia' && <h3>"Sepia"</h3>}
         </div>
 
         <div className={styles.container}>

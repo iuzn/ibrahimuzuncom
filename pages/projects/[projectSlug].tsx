@@ -4,69 +4,72 @@ import { NotionRenderer, BlockMapType } from 'react-notion'
 import { config } from '../../config'
 import Layout from '../../components/layout/index'
 import { getBlogTable, getPageBlocks } from '../../core/blog'
-import { dateFormatter } from '../../core/utils'
-import { BlogPost } from '../../types/blog'
+import { Project } from '../../types/project'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { Footer } from '../../components/sections/footer'
 import { toNotionImageUrl } from '../../core/notion'
 import Header from '../../components/header/header'
 import { useRouter } from 'next/router'
 import Loading from '../../components/loading'
+import {dateFormatter} from "../../core/utils";
 
 interface PostProps {
   blocks: BlockMapType
-  post: BlogPost
-  morePosts: BlogPost[]
+  project: Project
+  moreProject: Project[]
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const table = await getBlogTable<BlogPost>(config.notionBlogTableId)
+  const table = await getBlogTable<Project>(config.notionProjectTableId)
   return {
     paths: table
       .filter((row) => row.published)
-      .map((row) => `/blog/${row.slug}`),
+      .map((row) => `/projects/${row.slug}`),
     fallback: true
   }
 }
 
 export const getStaticProps: GetStaticProps<
   PostProps,
-  { blogSlug: string }
+  { projectSlug: string }
 > = async ({ params }) => {
-  const slug = params?.blogSlug
+  const slug = params?.projectSlug
 
   if (!slug) {
     throw Error('No slug given')
   }
 
-  const table = await getBlogTable<BlogPost>(config.notionBlogTableId)
-  const publishedPosts = table.filter((p) => p.published)
+  const table = await getBlogTable<Project>(config.notionProjectTableId)
+  const publishedProject = table.filter((p) => p.published)
 
-  const post = table.find((t) => t.slug === slug)
-  const postIndex = publishedPosts.findIndex((t) => t.slug === slug)
+  const project = table.find((t) => t.slug === slug)
+  const projectIndex = publishedProject.findIndex((t) => t.slug === slug)
 
-  const morePosts = [...publishedPosts, ...publishedPosts].slice(
-    postIndex + 1,
-    postIndex + 3
+  const moreProject = [...publishedProject, ...publishedProject].slice(
+    projectIndex + 1,
+    projectIndex + 3
   )
 
-  if (!post || (!post.published && process.env.NODE_ENV !== 'development')) {
+  if (
+    !project ||
+    (!project.published && process.env.NODE_ENV !== 'development')
+  ) {
     throw Error(`Failed to find post for slug: ${slug}`)
   }
 
-  const blocks = await getPageBlocks(post.id)
+  const blocks = await getPageBlocks(project.id)
 
   return {
     props: {
-      post,
+      project,
       blocks,
-      morePosts
+      moreProject
     },
     revalidate: 1
   }
 }
 
-const BlogPosts: React.FC<PostProps> = ({ post, blocks }) => {
+const ProjectPosts: React.FC<PostProps> = ({ project, blocks }) => {
   const router = useRouter()
   if (router.isFallback) {
     return (
@@ -86,35 +89,39 @@ const BlogPosts: React.FC<PostProps> = ({ post, blocks }) => {
   return (
     <>
       <NextSeo
-        title={post.title}
-        description={post.preview}
+        title={project.title}
+        description={project.preview}
         openGraph={{
           type: 'article',
-          images: post.images?.[0] && [
+          images: project.images?.[0] && [
             {
-              url: toNotionImageUrl(post.images[0].url),
+              url: toNotionImageUrl(project.images[0].url),
               width: 320,
               height: 210
             }
           ],
           article: {
-            publishedTime: new Date(post.date).toISOString(),
-            tags: post.tags
+            publishedTime: new Date(project.date).toISOString(),
+            tags: project.tags
           }
         }}
-        titleTemplate="%s – Blog"
+        titleTemplate="%s"
       />
       <Layout>
-        <Header title={'Blog'} />
+        <Header title={'Projects'} />
+
         <div className="my-8 w-full max-w-3xl mx-auto px-4">
+          {project.images && project.images[0] && (
+            <img
+              className={'mx-auto pb-6'}
+              src={toNotionImageUrl(project.images[0].url)}
+              alt={project.title}
+            />
+          )}
           <h1 className="text-2xl md:text-3xl font-bold sm:text-center mb-2">
-            {post.title}
+            {project.title}
           </h1>
-          <div className="sm:text-center text-gray-600">
-            <time dateTime={new Date(post.date).toISOString()}>
-              {dateFormatter.format(new Date(post.date))}
-            </time>
-          </div>
+          <div className="sm:text-center text-gray-600">{dateFormatter.format(new Date(project.date))} </div>
         </div>
         <article className="flex-1 my-6 post-container">
           <NotionRenderer blockMap={blocks} mapImageUrl={toNotionImageUrl} />
@@ -124,4 +131,4 @@ const BlogPosts: React.FC<PostProps> = ({ post, blocks }) => {
     </>
   )
 }
-export default BlogPosts
+export default ProjectPosts

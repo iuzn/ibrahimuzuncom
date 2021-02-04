@@ -1,10 +1,10 @@
 // pages/404.js
 import React from 'react'
-import { Footer } from '../components/sections/footer'
+import { Footer } from '../../components/sections/footer'
 import { NextSeo } from 'next-seo'
-import Layout from '../components/layout/'
-import Header from '../components/header/header'
-import LinkedButton from '../components/linked-button'
+import Layout from '../../components/layout/'
+import Header from '../../components/header/header'
+import LinkedButton from '../../components/linked-button'
 
 export default function Custom404() {
   return (
@@ -14,7 +14,7 @@ export default function Custom404() {
         titleTemplate={'%s'}
         description="No such thing"
       />
-      <Header title={'No such thing'} />
+      <Header title={'Böyle bir şey yok'} />
 
       <div className="h-screen flex items-center">
         <div className="container flex flex-col md:flex-row items-center justify-center px-5">

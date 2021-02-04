@@ -10,6 +10,7 @@ export interface BlogPost {
     url: string;
   }[];
   video: string;
+  showVideo: boolean;
   tags: string[];
   slug: string;
   date: number;

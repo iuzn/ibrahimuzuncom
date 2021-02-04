@@ -1,45 +1,42 @@
 import * as React from 'react'
 import { NextSeo } from 'next-seo'
 import { NotionRenderer, BlockMapType } from 'react-notion'
-import { config } from '../../config'
-import Layout from '../../components/layout/index'
-import { getBlogTable, getPageBlocks } from '../../core/blog'
-import { dateFormatter } from '../../core/utils'
-import { BlogPost } from '../../types/blog'
+import { config } from '../config'
+import Layout from '../components/layout/index'
+import { getBlogTable, getPageBlocks } from '../core/blog'
+import { CustomPage } from '../types/custom-page'
 import { GetStaticProps, GetStaticPaths } from 'next'
-import { Footer } from '../../components/sections/footer'
-import { toNotionImageUrl } from '../../core/notion'
-import Header from '../../components/header/header'
+import { Footer } from '../components/sections/footer'
+import { toNotionImageUrl } from '../core/notion'
+import Header from '../components/header/header'
 import { useRouter } from 'next/router'
-import Loading from '../../components/loading'
+import Loading from '../components/loading'
 
 interface PostProps {
   blocks: BlockMapType
-  post: BlogPost
-  morePosts: BlogPost[]
+  post: CustomPage
+  morePosts: CustomPage[]
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const table = await getBlogTable<BlogPost>(config.notionBlogTableId)
+  const table = await getBlogTable<CustomPage>(config.notionCustomPageTableId)
   return {
-    paths: table
-      .filter((row) => row.published)
-      .map((row) => `/blog/${row.slug}`),
+    paths: table.filter((row) => row.published).map((row) => `/${row.slug}`),
     fallback: true
   }
 }
 
 export const getStaticProps: GetStaticProps<
   PostProps,
-  { blogSlug: string }
+  { pageSlug: string }
 > = async ({ params }) => {
-  const slug = params?.blogSlug
+  const slug = params?.pageSlug
 
   if (!slug) {
     throw Error('No slug given')
   }
 
-  const table = await getBlogTable<BlogPost>(config.notionBlogTableId)
+  const table = await getBlogTable<CustomPage>(config.notionCustomPageTableId)
   const publishedPosts = table.filter((p) => p.published)
 
   const post = table.find((t) => t.slug === slug)
@@ -90,32 +87,13 @@ const BlogPosts: React.FC<PostProps> = ({ post, blocks }) => {
         description={post.preview}
         openGraph={{
           type: 'article',
-          images: post.images?.[0] && [
-            {
-              url: toNotionImageUrl(post.images[0].url),
-              width: 320,
-              height: 210
-            }
-          ],
           article: {
-            publishedTime: new Date(post.date).toISOString(),
-            tags: post.tags
+            publishedTime: new Date(post.date).toISOString()
           }
         }}
-        titleTemplate="%s – Blog"
       />
       <Layout>
-        <Header title={'Blog'} />
-        <div className="my-8 w-full max-w-3xl mx-auto px-4">
-          <h1 className="text-2xl md:text-3xl font-bold sm:text-center mb-2">
-            {post.title}
-          </h1>
-          <div className="sm:text-center text-gray-600">
-            <time dateTime={new Date(post.date).toISOString()}>
-              {dateFormatter.format(new Date(post.date))}
-            </time>
-          </div>
-        </div>
+        <Header title={post.title} />
         <article className="flex-1 my-6 post-container">
           <NotionRenderer blockMap={blocks} mapImageUrl={toNotionImageUrl} />
         </article>

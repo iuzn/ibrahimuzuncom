@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import Head from "next/head";
+import Head from 'next/head'
 import StoreContext from '../store'
-import "../assets/styles/main.css";
-import "../assets/styles/prism.css";
-import "../styles/app.css"
-export default function MyApp({ Component, pageProps }) {
+import '../assets/styles/main.css'
+import '../assets/styles/prism.css'
+import '../styles/app.css'
 
+export default function MyApp({ Component, pageProps }) {
+  const siteTitle = process.env.NEXT_PUBLIC_BLOG_TITLE
   const [theme, themeSet] = useState(null)
 
   useEffect(() => {
@@ -29,13 +30,20 @@ export default function MyApp({ Component, pageProps }) {
   }, [theme])
 
   return (
-    <StoreContext.Provider value={{ theme, changeTheme }}>
+    <StoreContext.Provider value={{ siteTitle, theme, changeTheme }}>
       <Head>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&display=swap" rel="stylesheet"/>
-        <link rel="shortcut icon" href={"/favicon.png"}
-          />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet"
+        />
 
-        <title>Blog</title>
+        <link rel="shortcut icon" href={process.env.NEXT_PUBLIC_FAVICON_URL} />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
+     user-scalable=0"
+        />
+        <title>{siteTitle}</title>
       </Head>
       <Component {...pageProps} />
     </StoreContext.Provider>

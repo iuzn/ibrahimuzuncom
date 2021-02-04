@@ -1,5 +1,5 @@
-export const dateFormatter = new Intl.DateTimeFormat("tr-TR", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
+export const dateFormatter = new Intl.DateTimeFormat(undefined, {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+})

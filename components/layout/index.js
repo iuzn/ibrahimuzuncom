@@ -8,7 +8,6 @@ import Sidebar from '../col/col-sidebar'
 import CONST from '../../constants'
 import Main from '../col/col-main'
 import ScrollToTop from '../scroll-top'
-import Loading from "../loading";
 
 function Layout({ children }) {
   const size = useWindowSize()
