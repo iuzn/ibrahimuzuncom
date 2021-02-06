@@ -1,2 +1,2 @@
 
-# Developer Blog: dev.ibrahimuzun.com
+# ibrahimuzun.com
